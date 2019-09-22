@@ -1,0 +1,164 @@
+@prefix vsso: <http://automotive.eurecom.fr/vsso#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix vdc: <http://automotive.eurecom.fr/vdc#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wo: <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#> .
+
+
+<http://automotive.eurecom.fr/vdc#> rdf:type owl:Ontology ;
+                                    owl:imports <http://purl.org/NET/c4dm/event.owl#>  .
+
+vdc: rdf:type owl:Ontology ;
+  owl:imports event: ;
+  dct:title "Vehicle Driving Context ontology";
+  vann:preferredNamespaceUri "http://automotive.eurecom.fr/vdc" ;
+  dct:issued "2018-11-15"^^xsd:date ;
+  dc:description "This ontology describes a driving context around 3 main features of interest: the vehicle, the occupants and the surroundings. 
+  It reuses the pattern of SOSA for its states and the Event ontology for its events." ;
+  # dct:license TODO ;
+  dct:modified "2019-09-15" ;
+  dct:created "2018-11-15"^^xsd:date ;
+  dct:creator "Benjamin Klotz" ;
+  owl:versionInfo """v1.1 15/09/2019"""@en ;
+  vann:preferredNamespacePrefix "vdc" .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://automotive.eurecom.fr/vdc#hasBehavioralState
+vdc:hasBehavioralState rdf:type owl:ObjectProperty ;
+                    rdfs:label " has Behavioral state"@en;
+                    rdfs:comment "Relationship between a foal:Person and a vdc:BehavioralState."@en;
+                    rdfs:domain foaf:Person ;
+                    rdfs:range vdc:BehavioralState .
+
+
+###  http://automotive.eurecom.fr/vdc#hasEmotionalState
+vdc:hasMentalState rdf:type owl:ObjectProperty ;
+                   rdfs:label "has Mental state"@en;
+                   rdfs:comment "Relationship between a foal:Person and a vdc:MentalState."@en;
+                   rdfs:domain foaf:Person ;
+                   rdfs:range vdc:MentalState .
+
+
+###  http://automotive.eurecom.fr/vdc#hasRole
+vdc:hasRole rdf:type owl:ObjectProperty ;
+         rdfs:label "has Role"@en;
+         rdfs:comment "Relationship between a foaf:Person and his/her roler in the driving activity (driver or passenger)";
+         rdfs:domain foaf:Person ;
+         rdfs:range vdc:Occupant .
+
+###  http://automotive.eurecom.fr/vdc#drives
+vdc:drives rdf:type owl:ObjectProperty ;
+         rdfs:label "drives"@en;
+         rdfs:comment "Relationship between a foaf:Person and his/her vsso:Vehicle";
+         rdfs:domain foaf:Person ;
+         rdfs:range vsso:Vehicle.
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://automotive.eurecom.fr/vdc#Area
+vdc:Area rdf:type owl:Class ;
+      rdfs:subClassOf vdc:SpatialRegion ;
+      rdfs:label "Area"@en;
+      rdfs:comment "This is the area the vehicle is in: a region, a settlement...".
+
+
+###  http://automotive.eurecom.fr/vdc#BehavioralState
+vdc:BehavioralState rdf:type owl:Class ;
+                 owl:equivalentClass <http://purl.obolibrary.org/obo/OGMS_0000060> ;
+                 rdfs:label "Behavioral state"@en;
+                 rdfs:comment "This is the behavior of the driver or passengers"@en;
+                 rdfs:domain foaf:Person ;
+                 rdfs:subClassOf vdc:State .
+
+
+###  http://automotive.eurecom.fr/vdc#Occupant
+vdc:Occupant rdf:type owl:Class ;
+           rdfs:label "Occupant"@en ;
+           rdfs:comment "Person in a vehicle, driver or passenger."@en.
+
+###  http://automotive.eurecom.fr/vdc#Driver
+vdc:Driver rdf:type owl:Class ;
+        rdfs:subClassOf vdc:Occupant ;
+        rdfs:label "Driver"@en;
+        rdfs:comment "This is the role of the driver."@en;
+        owl:disjointWith vdc:Passenger .
+
+###  http://automotive.eurecom.fr/vdc#Passenger
+vdc:Passenger rdf:type owl:Class ;
+           rdfs:subClassOf vdc:Occupant ;
+        rdfs:label "Passenger"@en;
+        rdfs:comment "This is the role of the passengers."@en.
+
+
+###  http://automotive.eurecom.fr/vdc#EmotionalState
+vdc:MentalState rdf:type owl:Class ;
+                owl:equivalentClass <http://purl.obolibrary.org/obo/MFOEM_000001> ,
+                                    <http://semanticscience.org/resource/SIO_000276> ;
+                rdfs:label "Mental state"@en;
+                rdfs:comment "This is the mental state (emotion, stress, mood...) of the driver or passengers"@en;
+                rdfs:subClassOf vdc:State .
+
+
+
+
+###  http://automotive.eurecom.fr/vdc#Road
+vdc:Road rdf:type owl:Class ;
+      owl:equivalentClass <http://www.livewiredg.myby.co.uk/rdf/geo-layers/context/road.owl#RoadSystem> ,
+                          <http://www.toyota-ti.ac.jp/Lab/Denshi/COIN/Map#RouteOfTransportation> ;
+      rdfs:label "Road"@en;
+      rdfs:comment "This is the road the vsso:Vehicle is driving on."@en;
+      rdfs:subClassOf vdc:SpatialRegion .
+
+###  http://automotive.eurecom.fr/vdc#RoadState
+vdc:RoadState rdf:type owl:Class ;
+      rdfs:label "Road state"@en;
+      rdfs:comment "This is the road state of the vdc:Road."@en;
+      rdfs:subClassOf vdc:SpatialRegionState .
+
+###  http://automotive.eurecom.fr/vdc#SpatialRegion
+vdc:SpatialRegion rdf:type owl:Class ;
+               rdfs:label "Spatial Region"@en;
+               rdfs:comment "This is the spatial region.".
+
+###  http://automotive.eurecom.fr/vdc#SpatialRegionState
+vdc:SpatialRegionState rdf:type owl:Class ;
+               rdfs:subClassOf vdc:State ;
+               rdfs:label "Spatial Region state"@en;
+               rdfs:comment "This is the spatial region state and situation of the vehicle.".
+
+###  http://automotive.eurecom.fr/vdc#State
+vdc:State rdf:type owl:Class ;
+       rdfs:subClassOf geo:SpatialThing, sosa:ObservableProperty .
+
+
+###  http://automotive.eurecom.fr/vdc#WeatherState
+vdc:WeatherState rdf:type owl:Class ;
+              owl:equivalentClass wo:WeatherState, wo:WeatherPhenomenon, wo:WeatherCondition ;
+              rdfs:subClassOf vdc:State ;
+              rdfs:label "Weather State"@en;
+              rdfs:comment "This is the weather state at the location of the vsso:Vehicle"@en.
+
+
+###  http://automotive.eurecom.fr/vsso#ObservableSignal
+vsso:ObservableSignal rdfs:subClassOf vdc:State .
+
+###  events
+vdc:Event rdfs:subClassOf event:Event ;
+              rdfs:label "Driving event"@en;
+              rdfs:comment "Events in the case of driving situations."@en.
