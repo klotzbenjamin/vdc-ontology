@@ -6,7 +6,7 @@ VDC is an ontology created from the combination of the SOSA patterns for observa
 This repository contains the html documentation about VDC, automatically generated using WIDOCO.
 The rendered page is available at http://automotive.eurecom.fr/vdc
 
-## Competency questions for VSSo
+## Competency questions for VDC
 Here is a list of competency questions that served to evaluate VDC, expressed when possible as SPARQL queries on VDC datasets.
 
 ### Single domain states
