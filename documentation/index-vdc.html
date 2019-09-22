@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="static/resources/primer.css" media="screen" />    <link rel="stylesheet" href="static/resources/rec.css" media="screen" />    <link rel="stylesheet" href="static/resources/extra.css" media="screen" />    <link rel="stylesheet" href="static/resources/owl.css" media="screen" />    <title>VDC</title>
+
+
+<!-- SCHEMA.ORG METADATA 
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://automotive.eurecom.fr/VDC#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://automotive.eurecom.fr/VDC#","name":"VDC", "headline":"VDC, or VSS ontology is an ontology for describing automotive attributes, branches and signals. It is based on the Vehicle Signal Specification (GENIVI) and reuses the SSN/SOSA pattern for signals.", "datePublished":"Wed Jul 11 15:57:37 CEST 2018""version":"  v1.1 01/06/2018 - Latest VSS concepts added
+  v1.2 13/11/2018 - Added concepts from schme.org, new prefix is VDC
+  v1.21 20/11/2018 - added author and preferred namespace URI, corrected typo in VDC:EVAPVaporPressureAbsolute", "author":[{"@type":"Person","name":"Benjamin Klotz","url":"http://eurecom.fr/~klotz"}]}</script>
+  -->
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://automotive.eurecom.fr/vdc#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://automotive.eurecom.fr/VDC#","name":"VDC", "headline":"VDC (Vehicle Driving Context) is an ontology for describing the general driving context in a generic approach. It includes several domains such as the car signals and attribute, the road description, driver mental and behavioral state or weather.", "datePublished":"2018-11-22", "version":"
+	v1 17/07/2018 
+  v1.1 22/11/2018 - corected alignment pattern, new prefix is VDC", "author":[{"@type":"Person","name":"Benjamin Klotz","url":"http://eurecom.fr/~klotz"}]}</script>
+
+
+<script src="static/resources/jquery.js"></script> 
+<script src="static/resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).text()+'</a></li>';
+		}
+		t = t.replace(' back to ToC','');
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+    $(function(){
+      $("#abstract").load("static/sections/abstract-vdc.html"); 
+      $("#introduction").load("static/sections/introduction-vdc.html"); 
+      $("#description").load("static/sections/description-vdc.html"); 
+      $("#references").load("static/sections/references-vdc.html"); 
+      $("#crossref").load("static/sections/crossref-vdc.html", null, loadHash); 
+    });
+    </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index.html"><b>en</b></a> </div>
+<h1>VDC</h1>
+
+<dl>
+<dt>This version:</dt>
+<dd>1.1</dd>
+<dt>Revision:</dt>
+<dd>
+  <p>v1.1 22/11/2018 - Corrected alignment pattern</p></dd>
+<dt>Authors:</dt>
+<dd><a href="http://eurecom.fr/~klotz">Benjamin Klotz</a>, EURECOM</dd>
+<dt>Preferred namespace:</dt>
+<dd>vdc</dd>
+<dl>
+<dt>Download serialization:</dt><dd>
+<!--<span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://insertlicenseURIhere.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.org" /></a>
+-->
+<span><a href="vdc.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span>
+</dd></dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"></div>
+<div id="toc"></div>     
+<div id="introduction"></div>
+     <div id="description"></div>
+     <div id="crossref"></div>
+     <div id="references"></div>
+<div id="acknowledgements">
+<h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+</div>
+</body>
+</html>

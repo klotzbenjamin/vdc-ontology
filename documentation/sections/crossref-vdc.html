@@ -1,0 +1,438 @@
+<html><h2 id="crossreference" class="list">Inventory of Vehicle Driving Context ontology classes, properties and datatype properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Vehicle Driving Context ontology.
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Area" title="http://automotive.eurecom.fr/vdc#Area">Area</a>
+      </li>
+      <li>
+         <a href="#BehavioralState" title="http://automotive.eurecom.fr/vdc#BehavioralState">
+            <span>Behavioral state</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Driver" title="http://automotive.eurecom.fr/vdc#Driver">Driver</a>
+      </li>
+      <li>
+         <a href="#Event" title="http://automotive.eurecom.fr/vdc#Event">Driving event</a>
+      </li>
+      <li>
+         <a href="#MentalState" title="http://automotive.eurecom.fr/vdc#MentalState">Mental state</a>
+      </li>
+      <li>
+         <a href="#http://automotive.eurecom.fr/vsso#ObservableSignal"
+            title="http://automotive.eurecom.fr/vsso#ObservableSignal">
+            <span>observable signal</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Occupant" title="http://automotive.eurecom.fr/vdc#Occupant">Occupant</a>
+      </li>
+      <li>
+         <a href="#Passenger" title="http://automotive.eurecom.fr/vdc#Passenger">Passenger</a>
+      </li>
+      <li>
+         <a href="#Road" title="http://automotive.eurecom.fr/vdc#Road">Road</a>
+      </li>
+      <li>
+         <a href="#SpatialRegion" title="http://automotive.eurecom.fr/vdc#SpatialRegion">Spatial Region</a>
+      </li>
+      <li>
+         <a href="#State" title="http://automotive.eurecom.fr/vdc#State">
+            <span>state</span>
+         </a>
+      </li>
+      <li>
+         <a href="#WeatherState" title="http://automotive.eurecom.fr/vdc#WeatherState">Weather State</a>
+      </li>
+   </ul>
+   <div class="entity" id="Area">
+      <h3>Area<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#Area</p>
+      <div class="comment">
+         <span class="markdown">This is the area the vehicle is in: a region, a settlement...</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#SpatialRegion" title="http://automotive.eurecom.fr/vdc#SpatialRegion">Spatial Region</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BehavioralState">
+      <h3>Behavioral state<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#BehavioralState</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <span class="dotted" title="http://purl.obolibrary.org/obo/OGMS_0000060">o g m s 0000060</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#State" title="http://automotive.eurecom.fr/vdc#State">state</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasBehavioralState"
+               title="http://automotive.eurecom.fr/vdc#hasBehavioralState"> has Behavioral state</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>
+            <a href="#BehavioralState">annotation property</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Driver">
+      <h3>Driver<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#Driver</p>
+      <div class="comment">
+         <span class="markdown">This is the role of the driver.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Occupant" title="http://automotive.eurecom.fr/vdc#Occupant">Occupant</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Passenger" title="http://automotive.eurecom.fr/vdc#Passenger">Passenger</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Event">
+      <h3>Driving event<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#Event</p>
+      <div class="comment">
+         <span class="markdown">Events in the case of driving situations.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/NET/c4dm/event.owl#Event">event</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MentalState">
+      <h3>Mental state<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#MentalState</p>
+      <div class="comment">
+         <span class="markdown">This is the mental state (emotion, stress, mood...) of the driver or passengers</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <span class="dotted" title="http://purl.obolibrary.org/obo/MFOEM_000001">m f o e m 000001</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://semanticscience.org/resource/SIO_000276">s i o 000276</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#State" title="http://automotive.eurecom.fr/vdc#State">state</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasMentalState" title="http://automotive.eurecom.fr/vdc#hasMentalState">has Mental state</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://automotive.eurecom.fr/vsso#ObservableSignal">
+      <h3>observable signal<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vsso#ObservableSignal</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#State" title="http://automotive.eurecom.fr/vdc#State">state</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Occupant">
+      <h3>Occupant<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#Occupant</p>
+      <div class="comment">
+         <span class="markdown">Person in a vehicle, driver or passenger.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Driver" title="http://automotive.eurecom.fr/vdc#Driver">Driver</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Passenger" title="http://automotive.eurecom.fr/vdc#Passenger">Passenger</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasRole" title="http://automotive.eurecom.fr/vdc#hasRole">has Role</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Passenger">
+      <h3>Passenger<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#Passenger</p>
+      <div class="comment">
+         <span class="markdown">This is the role of the passengers.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Occupant" title="http://automotive.eurecom.fr/vdc#Occupant">Occupant</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Driver" title="http://automotive.eurecom.fr/vdc#Driver">Driver</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Road">
+      <h3>Road<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#Road</p>
+      <div class="comment">
+         <span class="markdown">This is the road the vsso:Vehicle is driving on.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <span class="dotted"
+                  title="http://www.livewiredg.myby.co.uk/rdf/geo-layers/context/road.owl#RoadSystem">road system</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted"
+                  title="http://www.toyota-ti.ac.jp/Lab/Denshi/COIN/Map#RouteOfTransportation">route of transportation</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#SpatialRegion" title="http://automotive.eurecom.fr/vdc#SpatialRegion">Spatial Region</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SpatialRegion">
+      <h3>Spatial Region<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#SpatialRegion</p>
+      <div class="comment">
+         <span class="markdown">This is the spatial region and situation of the vehicle.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#State" title="http://automotive.eurecom.fr/vdc#State">state</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Area" title="http://automotive.eurecom.fr/vdc#Area">Area</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Road" title="http://automotive.eurecom.fr/vdc#Road">Road</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="State">
+      <h3>state<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#State</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted"
+                  title="http://www.w3.org/2003/01/geo/wgs84_posSpatialThing">wgs84 pos spatial thing</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/sosa/ObservableProperty">observable property</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#BehavioralState" title="http://automotive.eurecom.fr/vdc#BehavioralState">Behavioral state</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MentalState" title="http://automotive.eurecom.fr/vdc#MentalState">Mental state</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SpatialRegion" title="http://automotive.eurecom.fr/vdc#SpatialRegion">Spatial Region</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#WeatherState" title="http://automotive.eurecom.fr/vdc#WeatherState">Weather State</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://automotive.eurecom.fr/vsso#ObservableSignal"
+               title="http://automotive.eurecom.fr/vsso#ObservableSignal">observable signal</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="WeatherState">
+      <h3>Weather State<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#WeatherState</p>
+      <div class="comment">
+         <span class="markdown">This is the weather state at the location of the vsso:Vehicle</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <span class="dotted"
+                  title="https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherState">weather state</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#State" title="http://automotive.eurecom.fr/vdc#State">state</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasBehavioralState"
+            title="http://automotive.eurecom.fr/vdc#hasBehavioralState"> has Behavioral state</a>
+      </li>
+      <li>
+         <a href="#hasMentalState" title="http://automotive.eurecom.fr/vdc#hasMentalState">has Mental state</a>
+      </li>
+      <li>
+         <a href="#hasRole" title="http://automotive.eurecom.fr/vdc#hasRole">has Role</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasBehavioralState">
+      <h3> has Behavioral state<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#hasBehavioralState</p>
+      <div class="comment">
+         <span class="markdown">Relationship between a foal:Person and a vdc:BehavioralState.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#BehavioralState" title="http://automotive.eurecom.fr/vdc#BehavioralState">Behavioral state</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasMentalState">
+      <h3>has Mental state<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#hasMentalState</p>
+      <div class="comment">
+         <span class="markdown">Relationship between a foal:Person and a vdc:MentalState.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MentalState" title="http://automotive.eurecom.fr/vdc#MentalState">Mental state</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasRole">
+      <h3>has Role<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://automotive.eurecom.fr/vdc#hasRole</p>
+      <div class="comment">
+         <span class="markdown">Relationship between a foaf:Person and his/her roler in the driving activity (driver or passenger)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Occupant" title="http://automotive.eurecom.fr/vdc#Occupant">Occupant</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Datatype Properties">dp</sup>: Datatype Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</html>

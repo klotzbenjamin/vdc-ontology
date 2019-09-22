@@ -1,0 +1,24 @@
+<h2 id="desc" class="list">VDC: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This section presents some examples of usage of VDC, serialized in turtle.</span>
+
+A driving context is composed of events and states about the following features of interests: the driver and passengers, the vehicle and the spatial region.
+<h3>Driving states</h3>
+
+A driving state is a subclass of <code>sosa:ObservableProperty</code>, that can produce <code>sosa:Observation</code> instances at certain time (<code>time:TemporalEntity</code>) and space (<code>geo:SpatialThing</code>).
+<figure><img src="static/VDC.png" style="display:block; margin-left:auto; margin-right:auto; width:50%;" width="500"></figure>
+
+A vehicle is an instance of a vsso:Vehicle. It has a certain number of <code>vsso:attribute</code> and <code>vsso:ObservableSignal</code>. A <code>vsso:ObservableSignal</code> is a state of the vehicle.
+
+A driver is a <code>foaf:Person</code> that was attributed the role of <code>vdc:Driver</code>. A passenger was attributed the role <code>vdc:Passenger</code>. All people have a <code>vdc:MentalState</code> and a <code>vdc:BehavioralState</code>. The <code>vdc:MentalState</code> class contains all emotions and mental states (stress, distraction...), while the <code>vdc:BehavioralState</code> class contains all behavior of drivers and passengers. These classes are mapped with the MFOEM and SIO ontologies.
+<figure><img src="static/VDC-emotion-behavior.png" style="display:block; margin-left:auto; margin-right:auto; width:50%;" width="500"></figure>
+
+A <code>vdc:SpatialRegion</code> can be a <code>vdc:Road</code> or a <code>vdc:Area</code>. The <code>vdc:Road</code> is the road the  vehicle is on. The <code>vdc:Area</code> is the general spatial area around the vehicle, with its features and points of interest.
+
+An additional state of the <code>vdc:SpatialRegion</code> is the <code>vdc:WeatherState</code>. It is mapped with the Weather Ontology and the SEAS ontology.
+<figure><img src="static/VDC-weather.png" style="display:block; margin-left:auto; margin-right:auto; width:50%;" width="500"></figure>
+
+<h3>Driving events</h3>
+
+A driving event is an subclass of <code>event:Event</code>. It has a certain number of <code>foal:Agent</code> instances (people, vehicle) involved, potential <code>event:Factor</code>, <code>event:sub_event</code> and <code>event:Product</code> at certain time (<code>time:TemporalEntity</code>) and space (<code>geo:SpatialThing</code>).
+<figure><img src="static/event.png" style="display:block; margin-left:auto; margin-right:auto; width:50%;" width="500"></figure>
